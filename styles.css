@@ -1,0 +1,182 @@
+@import url("http://fonts.cdnfonts.com/css/tetris");
+
+body {
+   background: linear-gradient(to right, #181818, #212121, #656569);
+   color: #fff;
+}
+
+.tetris-title {
+   font-family: "Tetris", sans-serif;
+   font-size: 2em;
+   letter-spacing: -3px;
+}
+
+.tetris-title span:nth-child(1) {
+   background: linear-gradient(160deg, #ff4a6a 25%, #e7080b);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.tetris-title span:nth-child(2) {
+   background: linear-gradient(160deg, #ffc51b 25%, #fb3a07);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+.tetris-title span:nth-child(3) {
+   background: linear-gradient(160deg, #ffeb2e 25%, #ff8c0a);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+.tetris-title span:nth-child(4) {
+   background: linear-gradient(160deg, #63e948 25%, #228e18);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+.tetris-title span:nth-child(5) {
+   background: linear-gradient(160deg, #00feff 25%, #00feff);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+.tetris-title span:nth-child(6) {
+   background: linear-gradient(160deg, #df2bdb 25%, #7d1072);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.tetris-title span:last-child {
+   background: linear-gradient(160deg, #eee 25%, #333);
+   background: linear-gradient(#eee, #333);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.main {
+   height: 100vh;
+   display: flex;
+   justify-self: center;
+   align-items: center;
+}
+
+.main .row {
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+}
+
+.game-container {
+   position: relative;
+}
+
+.game-area {
+   position: relative;
+}
+
+canvas {
+   display: flex;
+   width: 100%;
+   border: 1px solid #d3d3d3;
+   background: #181818;
+}
+
+.game-control-btns {
+   display: flex;
+   margin-top: 1rem;
+   justify-content: space-around;
+}
+
+.game-status {
+   width: 50%;
+   position: absolute;
+   border: 1px solid #a8a8a8;
+   padding: 10px 15px;
+   right: -146px;
+   border-radius: 4px;
+   top: 0;
+}
+
+@media only screen and (max-width: 991px) {
+   .game-status {
+      width: 50%;
+      right: -114px;
+   }
+}
+
+@media only screen and (max-width: 576px) {
+   .game-status {
+      width: 100%;
+      margin-top: 1em;
+      position: unset;
+   }
+}
+
+.game-controls {
+   display: flex;
+   flex-wrap: wrap;
+   justify-items: center;
+}
+
+.game-controls button {
+   margin: auto;
+   margin-top: 5px;
+   font-size: 0.7em;
+}
+
+.game-status p {
+   margin-bottom: 0;
+}
+
+.game-status .status-item {
+   margin-bottom: 5px;
+   border-radius: 4px;
+   padding: 0 10px;
+   text-align: center;
+   background: #181818;
+}
+
+.start-game-modal-mask {
+   z-index: -1;
+   opacity: 0;
+   transition: all ease 0.3s;
+   display: flex;
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: rgb(70 67 67 / 85%);
+}
+
+.start-game-modal-mask.active {
+   z-index: 69;
+   opacity: 1;
+}
+
+.start-game-modal {
+   font-weight: 500;
+   font-size: 1.3em;
+   padding: 13px 12px;
+   color: #fff;
+   margin: auto;
+   background: #181818;
+   border-radius: 4px;
+   animation: blow-up-content 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes blow-up-content {
+   0% {
+      opacity: 0;
+      transform: scale(0);
+   }
+
+   100% {
+      transform: scale(1);
+      opacity: 1;
+   }
+}

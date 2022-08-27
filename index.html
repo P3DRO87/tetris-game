@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      />
+      <link rel="stylesheet" href="styles.css" />
+      <title>Template</title>
+   </head>
+   <body>
+      <main class="main">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-auto">
+                  <h1 class="tetris-title text-center">
+                     <span>T</span>
+                     <span>E</span>
+                     <span>T</span>
+                     <span>R</span>
+                     <span>I</span>
+                     <span>S</span>
+                     <span>Game</span>
+                  </h1>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-6 col-lg-auto col-sm-5 col-md-4">
+                  <div class="game-area">
+                     <div class="game-container">
+                        <canvas width="270" height="550" id="canvas"></canvas>
+                        <div class="game-controls d-none">
+                           <button id="move-left" class="btn btn-secondary"><</button
+                           ><button id="move-right" class="btn btn-secondary">></button
+                           ><button id="rotate" class="btn btn-secondary">↻</button
+                           ><button id="boost" class="btn btn-secondary">Boost</button>
+                        </div>
+                        <section id="game-status" class="game-status">
+                           <div class="score-panel">
+                              <p>Level</p>
+                              <p id="level" class="status-item">1</p>
+                              <p>Lines</p>
+                              <p id="lines" class="status-item">0</p>
+                           </div>
+                        </section>
+                     </div>
+                     <div class="game-control-btns">
+                        <button id="restart-game" class="btn btn-secondary">
+                           restart
+                        </button>
+                        <button id="pause-game" class="btn btn-secondary">pause</button>
+                     </div>
+                  </div>
+               </div>
+               <!-- <div class="col-sm-auto">
+                  
+               </div> -->
+            </div>
+         </div>
+      </main>
+      <div id="start-game-modal" class="start-game-modal-mask active">
+         <div class="start-game-modal">Press Enter or click to start</div>
+      </div>
+      <script type="module" src="js/main.js"></script>
+   </body>
+</html>
