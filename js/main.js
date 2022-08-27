@@ -282,7 +282,6 @@ const deleteLine = (fillRowIdx) => {
 };
 
 const setGameOver = () => {
-   song.pause();
    resetGameStatus();
    shape.y = -1;
    isGameOver = true;
