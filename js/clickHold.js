@@ -5,11 +5,20 @@ const clickHold = (htmlNode, cb, holdSpeed = 100) => {
       interval = setInterval(() => {
          cb({ ...e, mouseDownCb });
       }, holdSpeed);
+
+      if (e.currentTarget !== htmlNode) {
+         clearInterval(interval);
+         htmlNode.removeEventListener("mousedown", mouseDownCb);
+      }
    };
 
-   const mouseUpCb = () => {
+   const mouseUpCb = (e) => {
       clearInterval(interval);
-      // htmlNode.removeEventListener("mousedown", mouseDownCb);
+
+      if (e.currentTarget !== htmlNode) {
+         clearInterval(interval);
+         htmlNode.removeEventListener("mousedown", mouseDownCb);
+      }
    };
 
    htmlNode.addEventListener("mousedown", mouseDownCb);
